@@ -18,22 +18,20 @@ class GCodeSuperLaserController(octoprint.plugin.StartupPlugin,
                             octoprint.plugin.AssetPlugin,
                             octoprint.plugin.SettingsPlugin):
 
-    pigClient = None
-
     def __init__(self):
         self.pigClient = pigpio.pi()
+        self.regM = re.compile('M\d')
+        self.regS = re.compile('S\d+')
 
     def hook_gcode_queuing(self, comm_instance, phase, cmd, cmd_type, gcode, *args, **kwargs):
-        regM = re.compile('M\d+')
-        commandNumbers = regM.findall(cmd)
+        commandNumbers = self.regM.findall(cmd)
 
         if len(commandNumbers) > 0:
             commandNumber = commandNumbers[0]
         # ------------------------------------------------------
 
             if commandNumber == "M3":
-                regS = re.compile('S\d+')
-                commandValue = regS.findall(cmd)[0]
+                commandValue = self.regS.findall(cmd)[0]
                 finalValue = 0
 
                 if INVERT:
@@ -66,8 +64,15 @@ class GCodeSuperLaserController(octoprint.plugin.StartupPlugin,
     def get_update_information(self):
         return dict(
             GCodeSuperLaserController=dict(
-                displayName="GSLC Config",
+                displayName="GSLC",
                 displayVersion=self._plugin_version,
+
+                type="github_release",
+                current=self._plugin_version,
+                user="Skiepp",
+                repo="GCodeSuperLaserController",
+
+                pip="https://github.com/Skiepp/GCodeSuperLaserController/archive/master.zip"
             )
         )
 
