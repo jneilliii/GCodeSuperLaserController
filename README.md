@@ -15,9 +15,13 @@ How to Use
 ----------
 
 Step 0) Install the plugin
+
 Step 1) Connect the Laser driver to pins GPIO18 and GND
+
 Step 2) Create a GCode using the described commands
+
 Step 3) Print **using Octoprint**
 
 **Have fun :)**
+
 Oh, almost forgot, I'm not responsible for you hurting yourself with your cool laser, but please use it with caution.
