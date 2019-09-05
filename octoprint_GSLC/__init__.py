@@ -63,7 +63,7 @@ class GCodeSuperLaserController(octoprint.plugin.StartupPlugin,
 
     def get_update_information(self):
         return dict(
-            GCodeSuperLaserController=dict(
+            GSLC=dict(
                 displayName="GSLC",
                 displayVersion=self._plugin_version,
 
@@ -72,7 +72,7 @@ class GCodeSuperLaserController(octoprint.plugin.StartupPlugin,
                 user="Skiepp",
                 repo="GCodeSuperLaserController",
 
-                pip="https://github.com/Skiepp/GCodeSuperLaserController/archive/master.zip"
+                pip="https://github.com/Skiepp/GCodeSuperLaserController/archive/{target_version}.zip"
             )
         )
 
