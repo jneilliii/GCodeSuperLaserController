@@ -32,12 +32,10 @@ class GCodeSuperLaserController(octoprint.plugin.StartupPlugin,
 
             if commandNumber == "M3":
                 commandValue = self.regS.findall(cmd)[0]
-                finalValue = 0
+                finalValue = int(commandValue[1:])
 
                 if INVERT:
                     finalValue = 255 - int(commandValue[1:])
-                else:
-                    finalValue = int(commandValue[1:])
 
                 self.pigClient.set_PWM_dutycycle(18, finalValue)
 
