@@ -6,11 +6,12 @@ Printing from the OctoPrint interface with this plugin can turn your 3D printer 
 Commands
 --------
 - **M3 \<p\>**:  Turns ON the laser with power \<p\>
-- **M4** / **M5**:  Turn OFF the laser
+- **M4 \<p\>**:  Turns ON the laser with power 255-\<p\>
+- **M5**:  Turn OFF the laser
 
 The laser power can go from 1 (min) to 255 (MAX)
 
-**NOTE:** It's highly suggested to add an [**M400** - Finish Moves](http://marlinfw.org/docs/gcode/M400.html) before the M3 and M4/M5 commands.
+**NOTE:** It's highly suggested to add an [**M400** - Finish Moves](http://marlinfw.org/docs/gcode/M400.html) before the M3, M4 and M5 commands.
 
 How to Use
 ----------
@@ -21,5 +22,5 @@ Step 2) Create a GCode using the described commands<br/>
 Step 3) Print **using Octoprint**
 
 
-**Have fun :)** 
+**Have fun :)**<br/>
 Oh, almost forgot, I'm not responsible for you hurting yourself with your cool laser, but please use it with caution.

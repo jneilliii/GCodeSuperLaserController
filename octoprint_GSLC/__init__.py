@@ -45,7 +45,22 @@ class GCodeSuperLaserController(octoprint.plugin.StartupPlugin,
 
         # ------------------------------------------------------
 
-            if commandNumber == "M4" or commandNumber == "M5":
+            if commandNumber == "M4":
+                commandValue = self.regS.findall(cmd)[0]
+                finalValue = 255 - int(commandValue[1:])
+
+                if INVERT:
+                    finalValue = int(commandValue[1:])
+
+                self.pigClient.set_PWM_dutycycle(18, finalValue)
+
+                if DEBUG:
+                    myCmd = PIGS_CMD + str(finalValue)
+                    print myCmd
+
+        # ------------------------------------------------------
+
+            if commandNumber == "M5":
                 finalValue = 0
                 if INVERT:
                     finalValue = 255
@@ -57,7 +72,6 @@ class GCodeSuperLaserController(octoprint.plugin.StartupPlugin,
                     print myCmd
 
         # ------------------------------------------------------
-
 
     def get_update_information(self):
         return dict(
