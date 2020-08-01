@@ -33,7 +33,7 @@ plugin_url = "https://github.com/Skiepp/GCodeSuperLaserController"
 plugin_license = "Apache License 2.0"
 
 # Any additional requirements besides OctoPrint should be listed here
-plugin_requires = []
+plugin_requires = ["pigpio"]
 
 # Additional package data to install for this plugin. The subfolders "templates", "static" and "translations" will
 # already be installed automatically if they exist.
