@@ -1,4 +1,4 @@
-## This fork is only here to allow users to install from OctoPrint Plugin Repo, looking for maintainer. https://github.com/OctoPrint/plugins.octoprint.org/issues/961
+## This fork is only here to allow users to install from OctoPrint Plugin Repo after original author removed it, looking for maintainer. https://github.com/OctoPrint/plugins.octoprint.org/issues/961
 
 GCodeSuperLaserController
 =========================
