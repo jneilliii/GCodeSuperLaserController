@@ -1,3 +1,5 @@
+## This fork is only here to allow users to install from OctoPrint Plugin Repo, looking for maintainer. https://github.com/OctoPrint/plugins.octoprint.org/issues/961
+
 GCodeSuperLaserController
 =========================
 This is a basic plugin to work with a Laser Engraver.
